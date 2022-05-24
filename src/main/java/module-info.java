@@ -5,9 +5,7 @@ module com.example.sae_algo {
     requires org.controlsfx.controls;
 
     opens com.example.sae_algo to javafx.fxml;
+    exports controleur;
     exports modele;
     exports vue;
-    exports controleur;
-    opens vue to javafx.fxml;
-    opens controleur to javafx.fxml;
 }
