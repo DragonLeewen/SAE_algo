@@ -8,4 +8,5 @@ module com.example.sae_algo {
     exports controleur;
     exports modele;
     exports vue;
+    exports outils;
 }

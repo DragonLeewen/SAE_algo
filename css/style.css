@@ -1,0 +1,12 @@
+#carte{
+-fx-background-color:white;
+}
+
+.label{
+-fx-text-fill: #4682b4;
+-fx-font-size: 1.2em;
+}
+.root{
+-fx-padding: 15;
+-fx-background-color: cornsilk;
+}

@@ -21,10 +21,11 @@ public class VMainBox extends VBox implements ConstantesMenu {
     public VMainBox(){
         controleur = new Controleur();
         scenarioPane = new ScenarioPane();
-        scenarioPane.setId("opaque");
+        scenarioPane.setId("scenario");
         carteMembrePane = new CarteMembrePane();
+        carteMembrePane.setId("carte");
         creationPane = new CreationPane();
-        creationPane.setId("opaque");
+        creationPane.setId("creation");
 
         Node[] composants = new Node [3];
         composants [0] = scenarioPane;

@@ -9,6 +9,8 @@ import javafx.scene.layout.GridPane;
 
 public class ScenarioPane extends GridPane {
 
-    public ScenarioPane(){}
+    public ScenarioPane(){
+
+    }
 
 }
