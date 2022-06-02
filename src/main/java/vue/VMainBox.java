@@ -4,12 +4,13 @@ import controleur.Controleur;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import modele.ConstantesMenu;
+import outils.Scenario;
+
+import java.io.File;
 
 
 public class VMainBox extends VBox implements ConstantesMenu {
@@ -57,6 +58,17 @@ public class VMainBox extends VBox implements ConstantesMenu {
             });
             menu.getItems().add(menuItem);
         }
+        Menu menuFile = new Menu(SCENARIOS);
+        ToggleGroup toggleGroup = new ToggleGroup();
+        File [] fichiersScenario = new File("scenarios").listFiles();
+        for(File file : fichiersScenario) {
+            RadioMenuItem menuItem = new RadioMenuItem(file.getName());
+            menuItem.setUserData(file);
+            menuItem.setOnAction(controleur);
+            menuItem.setToggleGroup(toggleGroup);
+            menuFile.getItems().add(menuItem);
+        }
+
         this.getChildren().addAll(menuBar,stackPane);
     }
 }
