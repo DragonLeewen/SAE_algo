@@ -1,12 +1,10 @@
 package outils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class LectureEcriture {
+
     public static Scenario lectureScenario (File fichier) throws IOException{
         Scenario scenario = new Scenario();
 
@@ -26,4 +24,13 @@ public class LectureEcriture {
         return scenario;
     }
 
+    public static void ecritureScenario (String nomFichier, Scenario scenario) throws IOException{
+
+        PrintWriter sortie = new PrintWriter(new BufferedWriter((new FileWriter(nomFichier))));
+        int i = 0;
+        for (String vendeur : scenario.getListVendeurs()) {
+            sortie.println(vendeur + " ->" + scenario.getListAcheteurs().get(i));
+        }
+        sortie.close();
+    }
 }
