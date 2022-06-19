@@ -23,8 +23,8 @@ public class LectureEcriture {
         bufferEntree.close();
         return scenario;
     }
-    public static Scenario lectureVille (File fichier) throws IOException{
-        Scenario scenario = new Scenario();
+    public static MembresApli lectureVille (File fichier) throws IOException{
+        MembresApli membresApli = new MembresApli();
 
         BufferedReader bufferEntree = new BufferedReader(new FileReader(fichier));
         String ligne;
@@ -34,12 +34,12 @@ public class LectureEcriture {
             ligne = bufferEntree.readLine();
             if (ligne != null) {
                 tokenizer = new StringTokenizer(ligne, " ");
-                scenario.ajoutVendeurAcheteur(tokenizer.nextToken(), tokenizer.nextToken());
+                membresApli.ajoutMembresVilles(tokenizer.nextToken(), tokenizer.nextToken());
             }
         }
         while (ligne != null);
         bufferEntree.close();
-        return scenario;
+        return membresApli;
     }
 
     public static void ecritureScenario (String nomFichier, Scenario scenario) throws IOException{

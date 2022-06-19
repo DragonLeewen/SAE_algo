@@ -34,7 +34,7 @@ public class MembresApli {
 
     @Override
     public String toString() {
-        return "Scenario{" +
+        return "Membres + Villes{" +
                 "La liste des Membres =" + listMembre+ "\n"
                 + "La liste des Villes =" + listVille;
     }

@@ -8,9 +8,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import modele.ConstantesMenu;
+import outils.LectureEcriture;
 import outils.Scenario;
 
 import java.io.File;
+import java.io.IOException;
 
 
 public class VMainBox extends VBox implements ConstantesMenu {
@@ -19,7 +21,7 @@ public class VMainBox extends VBox implements ConstantesMenu {
     private static Controleur controleur;
     private static CarteMembrePane carteMembrePane;
 
-    public VMainBox(){
+    public VMainBox() throws IOException {
         controleur = new Controleur();
         scenarioPane = new ScenarioPane();
         scenarioPane.setId("scenario");
@@ -59,16 +61,29 @@ public class VMainBox extends VBox implements ConstantesMenu {
             menu.getItems().add(menuItem);
         }
         Menu menuFile = new Menu(SCENARIOS);
+        menuBar.getMenus().add(menuFile);
         ToggleGroup toggleGroup = new ToggleGroup();
         File [] fichiersScenario = new File("scenarios").listFiles();
         for(File file : fichiersScenario) {
             RadioMenuItem menuItem = new RadioMenuItem(file.getName());
             menuItem.setUserData(file);
-            menuItem.setOnAction(controleur);
             menuItem.setToggleGroup(toggleGroup);
             menuFile.getItems().add(menuItem);
         }
-
+        menuFile.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    VMainBox.getAffichageScenario().setText(LectureEcriture.lectureScenario((File) menuFile.getItems().get(1).getUserData()).toString());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         this.getChildren().addAll(menuBar,stackPane);
+    }
+    public static TextArea getAffichageScenario() {
+
+        return ScenarioArea.getAreaScenario();
     }
 }

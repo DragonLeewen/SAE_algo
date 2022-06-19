@@ -10,7 +10,8 @@ import javafx.scene.layout.GridPane;
 public class ScenarioPane extends GridPane {
 
     public ScenarioPane(){
-
+        ScenarioArea vue = new ScenarioArea();
+        add(vue,0,4,4,4);
     }
 
 }

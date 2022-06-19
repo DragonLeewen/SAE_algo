@@ -5,10 +5,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 
 public class VueApplication extends Application {
     @Override
-    public void start(Stage stage){
+    public void start(Stage stage) throws IOException {
         File css = new File("css" + File.separator + "style.css");
         
         VMainBox root = new VMainBox();
