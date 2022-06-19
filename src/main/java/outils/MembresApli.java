@@ -2,33 +2,40 @@ package outils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 public class MembresApli {
-    List<String> listMembres;
-    List<String> listVilles;
+    private static TreeMap<String,String> mapMembresVilles;
+    static ArrayList<String> listMembre;
+    static ArrayList<String> listVille;
 
     public MembresApli(){
-        listMembres = new ArrayList<>();
-        listVilles = new ArrayList<>();
+        mapMembresVilles = new TreeMap<>();
+        listMembre = new ArrayList<>();
+        listVille =new ArrayList<>();
     }
 
     public void ajoutMembresVilles(String membre, String ville){
-        listMembres.add(membre);
-        listVilles.add(ville);
+        listMembre.add(membre);
+        listVille.add(ville);
     }
 
-    public List<String> getListVilles() {
-        return listVilles;
+    public static TreeMap<String, String> getMapMembresVilles() {
+        return mapMembresVilles;
     }
 
-    public List<String> getListMembres() {
-        return listMembres;
+    public static List<String> getListVilles() {
+        return listVille;
+    }
+
+    public static List<String> getListMembres() {
+        return listMembre;
     }
 
     @Override
     public String toString() {
         return "Scenario{" +
-                "La liste des Membres =" + listMembres + "\n"
-                + "La liste des Villes =" + listVilles;
+                "La liste des Membres =" + listMembre+ "\n"
+                + "La liste des Villes =" + listVille;
     }
 }
