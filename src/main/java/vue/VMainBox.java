@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import modele.ConstantesMenu;
+import outils.Graphe;
 import outils.LectureEcriture;
 import outils.Scenario;
 
@@ -78,6 +79,7 @@ public class VMainBox extends VBox implements ConstantesMenu {
                     try {
                         VMainBox.getAffichageScenario().setText(LectureEcriture.lectureScenario((File) menuItem.getToggleGroup().getSelectedToggle().getUserData()).toString());
                         // Affichage du scénario en fonction de l'item selectionné
+                        //VMainBox.getAffichageScenario().setText(Graphe.unChemin(LectureEcriture.lectureScenario((File) menuItem.getToggleGroup().getSelectedToggle().getUserData())).toString());
                     } catch (IOException e) { // Récupère l'erreur si le fichier est corrompue
                         e.printStackTrace();
                     }
