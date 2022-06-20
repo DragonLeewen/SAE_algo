@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Scenario {
+//Défini un Scenario sous forme de deux listes Vendeur, Acheteur
+
     List<String> listVendeurs;
     List<String> listAcheteurs;
 

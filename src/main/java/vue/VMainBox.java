@@ -22,6 +22,8 @@ public class VMainBox extends VBox implements ConstantesMenu {
     private static CarteMembrePane carteMembrePane;
 
     public VMainBox() throws IOException {
+        /** Conteneur Principale contenant la barre de menu avec les items Scenario,
+        Membres,Création ainsi que les conteneurs ScénarioPane,CarteMembrePane et CreationPane **/
 
         controleur = new Controleur();
         scenarioPane = new ScenarioPane();

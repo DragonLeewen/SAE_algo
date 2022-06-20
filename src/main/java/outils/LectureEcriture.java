@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 public class LectureEcriture {
 
     public static Scenario lectureScenario (File fichier) throws IOException{
+        // Prend en paramètre un fichier et retourne un objet scenario, prend en compte si le fichier est corrompue
 
         Scenario scenario = new Scenario(); // Déclaration et Instanciation d'un objet Scenario
         BufferedReader bufferEntree = new BufferedReader(new FileReader(fichier)); // Création du tampon qui va lire le fichier
@@ -29,6 +30,7 @@ public class LectureEcriture {
     }
 
     public static MembresApli lectureVille (File fichier) throws IOException{
+        // Prend en paramètre un fichier et retourne un objet MembresApli, prend en compte si le fichier est corrompue
 
         MembresApli membresApli = new MembresApli();
         BufferedReader bufferEntree = new BufferedReader(new FileReader(fichier));

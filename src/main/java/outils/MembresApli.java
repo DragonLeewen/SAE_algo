@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class MembresApli {
+    /**Défini un MmembresApli soit sous forme de deux listes Membre, Ville
+    ou sous forme d'une Map avec pour clé un Membre et pour valeur une Ville **/
+
     private static TreeMap<String,String> mapMembresVilles;
     static ArrayList<String> listMembre;
     static ArrayList<String> listVille;

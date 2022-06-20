@@ -22,6 +22,8 @@ public class CarteMembrePane extends GridPane {
     private ComboBox membreSelection = new ComboBox<String>();
 
     public CarteMembrePane() throws IOException {
+        /** Crée la gridPane contenant le menu déroulant avec les membres, l'image de leur grade au sein de l'APLI,
+         leur ville et leur numéro de membre sous forme d'un label **/
 
         File filefeu = new File("C:/SAE_algo/badge_feu.png"); // Fichier contenant le grade du membre de l'APLI
         File fileau = new File("C:/SAE_algo/badge_eau.png");
