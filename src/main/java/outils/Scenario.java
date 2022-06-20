@@ -27,8 +27,8 @@ public class Scenario {
 
     @Override
     public String toString() {
-        return "Scenario{" +
-                "La liste des Vendeurs =" + listVendeurs + "\n"
+        return "Scenario" + "\n"+
+                "La liste des Vendeurs =" + listVendeurs + "\n" +"\n"
                 + "La liste des Acheteurs =" + listAcheteurs;
     }
 }
